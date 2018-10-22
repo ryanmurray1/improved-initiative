@@ -17,7 +17,7 @@ import configureStorageRoutes from "./storageroutes";
 
 const baseUrl = process.env.BASE_URL || "";
 const patreonClientId = process.env.PATREON_CLIENT_ID || "PATREON_CLIENT_ID";
-const defaultAccountLevel = process.env.DEFAULT_ACCOUNT_LEVEL || "free";
+const defaultAccountLevel = process.env.DEFAULT_ACCOUNT_LEVEL || "epicinitiative";
 
 type Req = Express.Request & express.Request;
 type Res = Express.Response & express.Response;
@@ -34,7 +34,7 @@ interface IPageRenderOptions {
 }
 
 const pageRenderOptions = (encounterId: string, session: Express.Session) : IPageRenderOptions => ({
-    rootDirectory: "../..", 
+    rootDirectory: "../..",
     encounterId,
     baseUrl,
     patreonClientId,
@@ -48,7 +48,7 @@ export default function (app: express.Application, statBlockLibrary: Library<Sta
     const mustacheEngine = mustacheExpress();
     const MongoDBStore = dbSession(session);
     let store = null;
-    
+
     if (process.env.DB_CONNECTION_STRING) {
         store = new MongoDBStore(
             {
@@ -83,7 +83,7 @@ export default function (app: express.Application, statBlockLibrary: Library<Sta
     app.use(bodyParser.urlencoded({ extended: false }));
 
     configureMetricsRoutes(app);
-    
+
     app.get("/", (req: Req, res: Res) => {
         const session = req.session;
         if (session === undefined) {
