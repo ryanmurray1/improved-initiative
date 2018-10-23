@@ -58,16 +58,23 @@
         height: 100%;
     }
 
+    .combatant-portrait__container {
+      width: 80%;
+      height: 80%;
+      max-width: 500px;
+      max-height: 500px;
+      background: @primary-white;
+    }
+
     .combatant-portrait__image {
-        width: 80%;
-        height: 80%;
-        max-width: 700px;
         object-fit: scale-down;
     }
 
     .combatant-portrait__caption {
-        max-width: 700px;
-        padding: 10px 0;
+        flex-direction: row;
+        justify-content: center;
+        padding: @medium-spacer;
+        background-color: @primary-white;
     }
 
     .damage-suggestion {
