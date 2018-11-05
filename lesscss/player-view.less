@@ -59,15 +59,18 @@
     }
 
     .combatant-portrait__container {
-      width: 80%;
-      height: 80%;
-      max-width: 500px;
-      max-height: 500px;
+      // width: 80%;
+      // height: 80%;
+      // max-width: 500px;
+      // max-height: 500px;
       background: @primary-white;
     }
 
     .combatant-portrait__image {
-        object-fit: scale-down;
+        padding: @large-spacer;
+        width: 500px;
+        max-width: 100%;
+        object-fit: fill;
     }
 
     .combatant-portrait__caption {
@@ -75,6 +78,15 @@
         justify-content: center;
         padding: @medium-spacer;
         background-color: @primary-white;
+
+        p {
+          font-family: @font-family-body;
+          font-size: @font-size-h3;
+
+          span {
+            font-family: @font-family-body;
+          }
+        }
     }
 
     .damage-suggestion {
